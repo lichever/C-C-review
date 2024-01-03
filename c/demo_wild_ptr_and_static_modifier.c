@@ -32,18 +32,18 @@ int main()
 
     */
     char *pstr;
-    func(&pstr);
+    func(&pstr);//传入的是指针的地址
     puts(pstr);
-
-    
 
 
     return 20;
 }
 
-//传入指针的指针 因为这里是改 指针 本身的值，而不是改 指针 指向的值，所以要传入指针的指针
+//传入是指针的地址 因为这里是改 指针 本身的值，而不是改 指针 指向的值，所以定义 二级指针
 void func(char **pp)
 {
-    char arr[] = "C语言中文网";//如果加上static，那么这里的arr就是静态的，不会被释放掉，所以不会出现上面的问题
+    // char arr[] = "C语言中文网";//现在是在栈上的，如果加上static，那么这里的arr就是静态的，不会被释放掉，所以不会出现上面的问题 or malloc 也可以 or char *arr = "C语言中文网"
+
+    char *arr = "C语言中文网";
     *pp = arr;
 }

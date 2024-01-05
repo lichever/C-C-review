@@ -1,5 +1,14 @@
 #include <stdio.h>
 
+//函数重载 not support in C
+void func()
+{
+}
+// void func(int a)
+// {
+// }
+
+
 int main()
 {
 
